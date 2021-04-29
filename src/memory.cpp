@@ -341,7 +341,8 @@ double Memory::exec_free(uint64_t addr) {
   free(ptr);
 
 #ifdef USE_MEMORY_TEMP
-  temp.remove(addr);
+  for (uint64_t addr_curr = addr; addr_curr < addr + size; addr_curr += 8)
+    temp.remove(addr_curr);
 #endif
 
   auto next = freed.lower_bound(block);
