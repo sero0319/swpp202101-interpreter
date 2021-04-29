@@ -27,6 +27,7 @@ sudo apt install cmake
 
 ```bash
 # executes a given assembly program and prints status to "sf-interpreter.log"
+# detailed information on the cost of an execution is emitted to "sf-interpreter-cost.log"
 # note that it gets a standard input on call to "read"
 ./sf-interpreter <input assembly file>
 ```
